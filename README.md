@@ -27,4 +27,6 @@ NEED LEAD
 - nanowrimo API
 - admin backend for content management
 
+[Task List](https://gist.github.com/veronicacannon/60ce9d0212430147befb)
+
 
