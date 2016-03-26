@@ -9,6 +9,9 @@ National Novel Writing Month (NaNoWriMo) is a non-profit organization that runs 
 - Rails 4.2
 - Foundation and Devise instead of bootstrap
 - Postgress instead of Sqlite
+ 
+## Expectations
+- time spent in project meetings (50% helping and 50% working on task)
 
 ## Component - Basic Writer Profile
 Lead Kelsey
