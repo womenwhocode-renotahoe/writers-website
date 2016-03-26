@@ -1,4 +1,4 @@
-* obviously unfinished... join our InstallFest(s) on ([Sat, 4/2 at 1pm](http://www.meetup.com/Women-Who-Code-Reno-Tahoe/events/229896130/) and ([Wed, 4/13 at 6pm] (http://www.meetup.com/Women-Who-Code-Reno-Tahoe/events/229896130/)). 
+* obviously unfinished... join our InstallFest(s) on ([Sat, 4/2 at 1pm](http://www.meetup.com/Women-Who-Code-Reno-Tahoe/events/229896130/) and [Wed, 4/13 at 6pm] (http://www.meetup.com/Women-Who-Code-Reno-Tahoe/events/229896130/)). 
 
 ##Getting Set Up
 
