@@ -24,14 +24,14 @@ Lead Kelsey
 - admin backend for content management
 
 ## Component - Story Content
-Be the lead!
+Be the lead, please!
 - Featured Story
 - Teasers
 - Kindle Download
 - admin backend for content management
 
 ## Components - Goals and Badges
-NEED LEAD
+Be the lead, please!
 - Goals
 - Accomplishments
 - Word County Graph
