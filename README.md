@@ -13,6 +13,8 @@ National Novel Writing Month (NaNoWriMo) is a non-profit organization that runs 
 ## Expectations
 - time spent in project meetings (50% helping and 50% working on task)
 
+## Design Lead - Lindsay
+
 ## Component - Basic Writer Profile
 Lead Kelsey
 - Name
@@ -22,7 +24,7 @@ Lead Kelsey
 - admin backend for content management
 
 ## Component - Story Content
-Lead Monica
+Be the lead!
 - Featured Story
 - Teasers
 - Kindle Download
