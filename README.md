@@ -4,6 +4,12 @@ Create a website for a new writer designed to be used by NaNoWriMo winners.
 ## What is NaNoWriMo?
 National Novel Writing Month (NaNoWriMo) is a non-profit organization that runs a yearly event to inspire and encourage new writers to complete a novel in the month of November.
 
+## Versions
+- Ruby 2.3
+- Rails 4.2
+- Foundation and Devise instead of bootstrap
+- Postgress instead of Sqlite
+
 ## Component - Basic Writer Profile
 Lead Kelsey
 - Name
