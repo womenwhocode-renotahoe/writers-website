@@ -31,7 +31,7 @@ Be the lead, please!
 - admin backend for content management
 
 ## Components - Goals and Badges
-Be the lead, please!
+Be the lead too, please!
 - Goals
 - Accomplishments
 - Word County Graph
