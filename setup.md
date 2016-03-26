@@ -1,7 +1,13 @@
 **Getting Set Up**
 
-Rails
+Checking your Version
+open terminal/console
 
-Ruby
+- Rails
 
-Git
+- Ruby
+
+- Git
+type `git --version`
+
+- 
