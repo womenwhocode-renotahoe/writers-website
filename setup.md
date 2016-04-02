@@ -57,7 +57,7 @@ Install Cloud9
 - First name request: enter your name
 - User Name selection: use lower case letters and numbers only
 
-Once Cloud9 is installed and you have run you project (instructions how to get project coming soon), to get back to it next time: 
+Once Cloud9 is installed and you have run your project (instructions how to get project coming soon), to get back to it next time: 
 - Open Cloud9
 - Open Workspace
 - Bash Tab (if not open, click plus sign and select "new terminal")
