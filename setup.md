@@ -50,3 +50,17 @@ type
 *note: if you use a rails installer on Windows, your sites directory is on the C: drive (root directory)
 
 ####Windows
+
+####Cloud9 
+Install Cloud9 
+#####Tips:
+- First name request: enter your name
+- User Name selection: use lower case letters and numbers only
+
+Once Cloud9 is installed and you have run you project (instructions how to get project coming soon), to get back to it next time: 
+- Open Cloud9
+- Open Workspace
+- Bash Tab (if not open, click plus sign and select "new terminal")
+- Start postgress type "sudo service postgresql start" (from http://blog.thefirehoseproject.com/posts/setting-up-a-cloud9-development-environment/
+- Run project (run project button near top)
+- Copy URL to new browser window
