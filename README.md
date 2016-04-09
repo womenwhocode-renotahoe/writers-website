@@ -30,13 +30,19 @@ Be the lead, please!
 - Kindle Download
 - admin backend for content management
 
-## Components - Goals and Badges
+## Component - Goals and Badges
 Be the lead too, please!
 - Goals
 - Accomplishments
 - Word County Graph
 - nanowrimo API
 - admin backend for content management
+
+## Component - Blog
+- allow comments after email verification
+- search
+- consider pictures
+- consider RSS
 
 [Task List](https://gist.github.com/veronicacannon/60ce9d0212430147befb)
 
