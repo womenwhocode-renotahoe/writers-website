@@ -1,0 +1,15 @@
+<%= form_for @writer do |f| %>
+  <%= f.label :twitter %>
+  <%= f.text_field :twitter %>
+  <br>
+  <%= f.label :full_name %>
+  <%= f.text_field :full_name %>
+  <br>
+  <%= f.label :bio %>
+  <%= f.text_area :bio %>
+  <br>
+  <%= f.label :location %>
+  <%= f.text_field :location %>
+  <br>
+  <%= f.submit %>
+<% end %>
