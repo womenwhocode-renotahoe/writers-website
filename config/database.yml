@@ -9,7 +9,16 @@
 # On Windows:
 #   gem install pg
 #       Choose the win32 build.
-#       Install PostgreSQL and put its /bin directory on your path.
+#   http://www.enterprisedb.com/products-services-training/pgdownload#windows
+#   Install PostgreSQL using the url above, select the appropriate version, download it, double click the file, 
+#   and install it using the defaults.
+#       Once PostgreSQL is installed, check that there is a new user created, called Postgres and note the password, which is 
+#       usually null.
+#   Edit your path variable through Control Panel, System, Advanced, and Enviroment Variables.  Append ; and the path
+#   to Postgres/bin.
+#   Start a fresh Rails window and go back to the project folder.
+#   Use rake db:create to create the database.
+#   Use rails s to run.
 #
 # Configure Using Gemfile
 # gem 'pg'
@@ -24,8 +33,6 @@ default: &default
 development:
   <<: *default
   database: writers-website_development
-  username: postgres
-  password: <%= ENV['WRITERS-WEBSITE_DATABASE_PASSWORD'] %>
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -60,8 +67,6 @@ development:
 test:
   <<: *default
   database: writers-website_test
-  username: postgres
-  password: <%= ENV['WRITERS-WEBSITE_DATABASE_PASSWORD'] %>
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
