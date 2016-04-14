@@ -50,16 +50,22 @@ type
 *note: if you use a rails installer on Windows, your sites directory is on the C: drive (root directory)
 
 ####Windows
- +
-+If you have the error:
-+Gem::RemoteFetcher::FetchError: SSL_connect returned=1 errno=0 state=SSLv3 read server certificate B: certificate verify failed (https://rubygems.org/gems/rake-11.1.1.gem)
-+An error occurred while installing rake (11.1.1), and Bundler cannot continue.  Make sure that 'gem install rake -v '11.1.1' succeeds before bundling.
-+
-+This is an issue that results from needing to have the certificate updated.  You can find a guide on how to correct this here:
-+https://gist.github.com/luislavena/f064211759ee0f806c88
-+
-+After you have gone through the sets, attempt to run the command 'bundle install'.  If this succeeds, the formerly missing rake has been installed.
+ 
+If you have the error:
+Gem::RemoteFetcher::FetchError: SSL_connect returned=1 errno=0 state=SSLv3 read server certificate B: certificate verify failed (https://rubygems.org/gems/rake-11.1.1.gem)
+An error occurred while installing rake (11.1.1), and Bundler cannot continue.  Make sure that 'gem install rake -v '11.1.1' succeeds before bundling.
 
+This is an issue that results from needing to have the certificate updated.  You can find a guide on how to correct this here:
+https://gist.github.com/luislavena/f064211759ee0f806c88
+
+After you have gone through the sets, attempt to run the command 'bundle install'.  If this succeeds, the formerly missing rake has been installed.
+
+When you are starting work on the project:
+In order to make sure that you have all of the current structures being used in it, you will need to open the Command Prompt with Ruby and Rails and run these commands:
+1.  'cd writers-website'
+2.  'git pull origin master'
+3.  'bundle install'
+4.  'rake db:migrate'
 ####Cloud9 
 Install Cloud9 
 #####Tips:
