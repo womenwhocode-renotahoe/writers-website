@@ -79,3 +79,7 @@ Once Cloud9 is installed and you have run your project (instructions how to get 
 - Start postgress type "sudo service postgresql start" (from http://blog.thefirehoseproject.com/posts/setting-up-a-cloud9-development-environment/
 - Run project (run project button near top)
 - Copy URL to new browser window
+
+
+Notes:
+When using the command 'git commit', the message has to be in double quotes.
