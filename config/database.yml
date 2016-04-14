@@ -25,7 +25,7 @@ development:
   <<: *default
   database: writers-website_development
   username: postgres
-  password: <%= ENV['WRITERS-WEBSITE_DATABASE_PASSWORD'] %>
+  password: <%= ENV['WRITERS_WEBSITE_DATABASE_PASSWORD'] %>
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
