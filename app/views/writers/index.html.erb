@@ -1,0 +1,18 @@
+<table>
+  <thead>
+    <th>Name</th>
+    <th>Twitter Handle</th>
+    <th>Location</th>
+    <th>Visit Page</th>
+  </thead>
+  <tbody>
+    <% @writers.each do |writer| %>
+      <tr>
+        <td><%= writer.full_name %></td>
+        <td><%= writer.twitter %></td>
+        <td><%= writer.location %></td>
+        <td><%= link_to 'Profile', writer_path(writer) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

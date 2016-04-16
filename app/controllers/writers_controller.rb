@@ -1,5 +1,9 @@
 class WritersController < ApplicationController
 
+  def index
+    @writers = Writer.all
+  end
+
   def new
     @writer = Writer.new
   end
