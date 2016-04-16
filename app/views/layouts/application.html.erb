@@ -7,6 +7,9 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<%= if current_user %>
+  <%= render partial: 'logged_in_header' %>
+<% end %>
 
 <%= yield %>
 
