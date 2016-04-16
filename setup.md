@@ -76,7 +76,10 @@ Once Cloud9 is installed and you have run your project (instructions how to get 
 - Open Cloud9
 - Open Workspace
 - Bash Tab (if not open, click plus sign and select "new terminal")
-- Start postgress type "sudo service postgresql start" (from http://blog.thefirehoseproject.com/posts/setting-up-a-cloud9-development-environment/
+- Start postgress type 'sudo service postgresql start' (Reference: http://blog.thefirehoseproject.com/posts/setting-up-a-cloud9-development-environment/
+- To download the latest project changes type 'git pull origin master'
+- 'bundle install'
+- 'rake db:migrate'
 - Run project (run project button near top)
 - Copy URL to new browser window
 
