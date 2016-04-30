@@ -11,10 +11,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160416205330) do
+ActiveRecord::Schema.define(version: 20160430210506) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "activities", force: :cascade do |t|
+    t.date     "date",        null: false
+    t.integer  "goal_id",     null: false
+    t.text     "description", null: false
+    t.integer  "value",       null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "activities", ["goal_id"], name: "index_activities_on_goal_id", using: :btree
+
+  create_table "goals", force: :cascade do |t|
+    t.string   "activity_type", null: false
+    t.string   "unit",          null: false
+    t.boolean  "visible",       null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
 
   create_table "stories", force: :cascade do |t|
     t.integer  "writer_id",                           null: false
@@ -44,6 +63,17 @@ ActiveRecord::Schema.define(version: 20160416205330) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+
+  create_table "writer_goals", force: :cascade do |t|
+    t.integer  "writer_id",  null: false
+    t.integer  "goal_id",    null: false
+    t.decimal  "value",      null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "writer_goals", ["goal_id"], name: "index_writer_goals_on_goal_id", using: :btree
+  add_index "writer_goals", ["writer_id"], name: "index_writer_goals_on_writer_id", using: :btree
 
   create_table "writers", force: :cascade do |t|
     t.string   "twitter"
