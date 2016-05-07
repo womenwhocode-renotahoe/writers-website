@@ -36,6 +36,10 @@ class WritersController < ApplicationController
     end
   end
 
+  def dashboard
+    @writer = Writer.find(params[:id])
+  end
+
   private
 
   def writer_params
