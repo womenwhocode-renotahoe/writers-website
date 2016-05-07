@@ -61,7 +61,7 @@ test:
   <<: *default
   database: writers-website_test
   username: postgres
-  password: <%= ENV['WRITERS-WEBSITE_DATABASE_PASSWORD'] %>
+  password: <%= ENV['WRITERS_WEBSITE_DATABASE_PASSWORD'] %>
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -86,4 +86,4 @@ production:
   <<: *default
   database: writers-website_production
   username: writers-website
-  password: <%= ENV['WRITERS-WEBSITE_DATABASE_PASSWORD'] %>
+  password: <%= ENV['WRITERS_WEBSITE_DATABASE_PASSWORD'] %>
