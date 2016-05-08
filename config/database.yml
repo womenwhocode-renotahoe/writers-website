@@ -23,8 +23,8 @@ default: &default
 
 development:
   <<: *default
-  database: writers-website_development
-  username: postgres
+  database: writers_website_development
+  username: <%= ENV['WRITERS_WEBSITE_DATABASE_USERNAME'] %>
   password: <%= ENV['WRITERS_WEBSITE_DATABASE_PASSWORD'] %>
 
   # The specified database role being used to connect to postgres.
@@ -59,8 +59,8 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: writers-website_test
-  username: postgres
+  database: writers_website_test
+  username: <%= ENV['WRITERS_WEBSITE_DATABASE_USERNAME'] %>
   password: <%= ENV['WRITERS_WEBSITE_DATABASE_PASSWORD'] %>
 
 # As with config/secrets.yml, you never want to store sensitive information,
@@ -84,6 +84,6 @@ test:
 #
 production:
   <<: *default
-  database: writers-website_production
+  database: writers_website_production
   username: writers-website
   password: <%= ENV['WRITERS_WEBSITE_DATABASE_PASSWORD'] %>
