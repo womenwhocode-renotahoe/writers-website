@@ -100,22 +100,27 @@ Install Postgres (database) and configure user.  When prompted, enter Y to conti
 
 `createuser --interactive`
 Enter **nitrous** as user
+Enter 'y' to superuser question
 
 `createdb writers_website_development`
 
 `logout`
 
 Configure environment variables for database user and password.
+
 `cd ..`
 
 `nano .zshrc`
 At the bottom of the file add the following and save (control X).
+
 export WRITERS_WEBSITE_DATABASE_USERNAME=nitrous
+
 export WRITERS_WEBSITE_DATABASE_PASSWORD=SomethingSecret
 
 Refresh shell by closing shell window using X and then entering a new shell.  
 
 Install Bundler, node-js and Rails
+
 `cd writers-website`
 
 `gem install bundler`
@@ -126,12 +131,15 @@ Enter 'Y' to continue
 `bundle install`
 
 Confirm version of rails is 4.2.5
+
 `rails -v`
 
 Define database schema and run migrations.
+
 `rake db:migrate`
 
 Run Rails
+
 `rails s -b 0.0.0.0`
 
 View app via Preview button in menu.
