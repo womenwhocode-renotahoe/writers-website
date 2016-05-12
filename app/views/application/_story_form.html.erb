@@ -1,0 +1,12 @@
+<%= form_for [@writer, @story] do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <br>
+  <%= f.label :summary %>
+  <%= f.text_field :summary %>
+  <br>
+  <%= f.label :body %>
+  <%= f.text_area :body %>
+  <br>
+  <%= f.submit %>
+<% end %>

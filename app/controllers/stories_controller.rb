@@ -12,6 +12,7 @@ class StoriesController < ApplicationController
 
   def create
     @story = Story.new(story_params)
+    @story.writer_id = @writer.id
     if @story.save
       flash[:success] = "Created new story"
       redirect_to writer_story_path(@writer, @story)
