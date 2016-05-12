@@ -82,6 +82,7 @@ _When you enter the local repo for the first time, you'll be prompted to install
 
 Once the install of Ruby has completed, confirm you have version 2.2.  Then back out of the writers-website directory and enter it again to get the gemset to take.
 `cd ..`
+
 `cd writers-website`
 
 Confirm the gemset is set to writers-website.
