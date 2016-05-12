@@ -5,13 +5,15 @@ Create a website for a new writer designed to be used by NaNoWriMo winners.
 National Novel Writing Month (NaNoWriMo) is a non-profit organization that runs a yearly event to inspire and encourage new writers to complete a novel in the month of November.
 
 ## Versions
-- Ruby 2.3
+- Ruby 2.2
 - Rails 4.2
-- Foundation and Devise instead of bootstrap
-- Postgress instead of Sqlite
+- Foundation and Devise
+- Postgress
+- we recommend rvm
+- Windows, Ubuntu, OSX and Nitrous supported
  
 ## Expectations
-- time spent in project meetings (50% helping and 50% working on task)
+- time spent in project group meetings (50% helping and 50% working on task)
 
 ## Design Lead - Lindsay
 
