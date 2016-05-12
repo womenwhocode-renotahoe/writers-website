@@ -64,6 +64,7 @@ Select IDE once your project is deployed.
 You'll be working at the command line.  Command line is also called terminal or shell.  When in Nitrous you have two panels; the code editor and the shell.  Create a new shell panel by clicking the plus symbol `+` and maximizing the window.
 
 Install RVM (Ruby Version Manager)
+
 `gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3`
 
 `curl -sSL https://get.rvm.io | bash -s stable`
@@ -71,6 +72,7 @@ Install RVM (Ruby Version Manager)
 `source /home/nitrous/.rvm/scripts/rvm`
 
 Clone this repository
+
 `git clone https://github.com/womenwhocode-renotahoe/writers-website.git`
 
 Install Ruby and Rails
@@ -81,19 +83,22 @@ _When you enter the local repo for the first time, you'll be prompted to install
 `rvm install ruby-2-2-2`
 
 Once the install of Ruby has completed, confirm you have version 2.2.  Then back out of the writers-website directory and enter it again to get the gemset to take.
+
 `cd ..`
 
 `cd writers-website`
 
 Confirm the gemset is set to writers-website.
+
 `rvm gemset list`
 
 Install Postgres (database) and configure user.  When prompted, enter Y to continue.
+
 `sudo apt-get install postgresql postgresql-contrib libpq-dev`
 
 `sudo su - postgres`
 
-`create user --interactive`
+`createuser --interactive`
 Enter **nitrous** as user
 
 `createdb writers_website_development`
