@@ -125,7 +125,7 @@ Install Bundler, node-js and Rails
 
 `gem install bundler`
 
-`sudo apt-get install node-js`
+`sudo apt-get install nodejs`
 Enter 'Y' to continue
 
 `bundle install`
