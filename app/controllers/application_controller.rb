@@ -4,7 +4,8 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_filter :authenticate_user!, except: [:show]
   before_filter :authorize_admin, only: [:index]
-  before_filter :current_user_or_admin?, only: [:edit, :update, :destroy]
+  before_filter :current_user_or_admin?, only: [:edit, :update]
+  before_action :configure_permitted_parameters, if: :devise_controller?
 
   def after_sign_in_path_for(resource)
     if admin_user_signed_in? then
@@ -28,6 +29,13 @@ class ApplicationController < ActionController::Base
 
   def authorize_admin
     redirect_to new_user_registration_path, :status => 401 unless admin_user_signed_in?
+  end
+
+  protected
+
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.for(:sign_up) << :avatar
+    devise_parameter_sanitizer.for(:account_update) << :avatar
   end
 end
 
