@@ -16,15 +16,14 @@ class ApplicationController < ActionController::Base
   end
 
   def admin_user_signed_in?
-    if user_signed_in? && current_user.admin?
-      true
-    else
-      false
-    end
+    user_signed_in? && current_user.admin?
   end
 
   def current_user_or_admin?
-    redirect_to writer_path(current_user.writer) unless current_user == Writer.find(params[:id]).user || admin_user_signed_in?
+    # TODO: Make this better (currently excluding devise path checks)
+    if params[:id]
+      redirect_to writer_path(current_user.writer) unless current_user == Writer.find(params[:id]).user || admin_user_signed_in?
+    end
   end
 
   def authorize_admin
