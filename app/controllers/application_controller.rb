@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_filter :authenticate_user!, except: [:show]
   before_filter :authorize_admin, only: [:index]
+  before_filter :current_user_or_admin?, only: [:edit, :update, :destroy]
 
   def after_sign_in_path_for(resource)
     if admin_user_signed_in? then
@@ -19,6 +20,10 @@ class ApplicationController < ActionController::Base
     else
       false
     end
+  end
+
+  def current_user_or_admin?
+    redirect_to writer_path(current_user.writer) unless current_user == Writer.find(params[:id]).user || admin_user_signed_in?
   end
 
   def authorize_admin
