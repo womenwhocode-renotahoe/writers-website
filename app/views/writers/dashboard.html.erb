@@ -3,4 +3,10 @@
     <%= link_to 'Edit Writer Profile', edit_writer_path(current_user.writer) %>
 <% else %>
   <h1><%= @writer.full_name %>'s Dashboard</h1>
+  <h2>Your Stories</h2>
+  <%= link_to "New Story", new_writer_story_path(@writer) %>
+  <% @stories.each do |story| %>
+  	<h3><%= link_to story.title, edit_writer_story_path(@writer, story) %></h3>
+  	<p><%= story.summary %></p>
+  <% end %>
 <% end %>

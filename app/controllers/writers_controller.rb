@@ -20,6 +20,7 @@ class WritersController < ApplicationController
 
   def show
     @writer = Writer.find(params[:id])
+    @stories = @writer.stories.published
   end
 
   def edit
@@ -40,6 +41,7 @@ class WritersController < ApplicationController
 
   def dashboard
     @writer = Writer.find(params[:id])
+    @stories = @writer.stories.all
   end
 
   private
