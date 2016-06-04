@@ -1,4 +1,5 @@
 class WritersController < ApplicationController
+  before_filter :authorize_admin, only: [:index]
 
   def index
     @writers = Writer.all

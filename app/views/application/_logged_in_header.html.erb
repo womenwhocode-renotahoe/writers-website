@@ -4,6 +4,7 @@
     <%= link_to 'Edit User Information', edit_user_registration_path %> |
     <%= link_to 'User Profile', writer_path(current_user.writer) %> | 
     <%= link_to 'Dashboard', dashboard_path(current_user) %> |
+    <%= link_to 'Goals', writer_writer_goals_path(current_user.writer) %> | 
     <%= link_to "Logout", destroy_user_session_path, method: :delete %>
   </div>
 </nav>
