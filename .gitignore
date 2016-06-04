@@ -12,3 +12,5 @@
 !/log/.keep
 /tmp
 
+# Ignore public folder
+/public/system
