@@ -1,11 +1,22 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+# define base admin user
 admin_user = User.create!(
 	email: 'admin@womenwhocoderenotahoe.com',
 	password: 'Hermione',
 	admin: true)
+
+# define basic goals
+goal_writing1 = Goal.create!(
+	activity_type: 'Word Count',
+	unit: 'Count',
+	visible: true)
+
+goal_writing2 = Goal.create!(
+	activity_type: 'Writing Frequency',
+	unit: 'Days',
+	visible: true)
+
+goal_posts = Goal.create!(
+	activity_type: 'Blogging',
+	unit: 'Count',
+	visible: true)
+
