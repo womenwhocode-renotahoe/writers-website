@@ -1,5 +1,9 @@
 <nav>
   <div class="container-fluid">
-    <%= link_to 'All Writers', writers_path %>
+    <p>Logged in as <strong><%= current_user.email %></strong>.</p>
+    <%= link_to 'Edit User Information', edit_user_registration_path %> |
+    <%= link_to 'User Profile', writer_path(current_user.writer) %> | 
+    <%= link_to 'Dashboard', dashboard_path(current_user) %> |
+    <%= link_to "Logout", destroy_user_session_path, method: :delete %>
   </div>
 </nav>

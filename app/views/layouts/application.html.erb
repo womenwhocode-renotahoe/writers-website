@@ -13,15 +13,9 @@
 
   <body>
     <% if user_signed_in? %>
-      Logged in as <strong><%= current_user.email %></strong>.
-      <%= link_to 'Edit User Information', edit_user_registration_path %> |
-      <%= link_to 'Edit Writer Profile', edit_writer_path(current_user.writer) %> | 
-      <%= link_to 'Dashboard', dashboard_path(current_user) %> |
-      <%= link_to "Logout", destroy_user_session_path, method: :delete %>
       <%= render partial: 'logged_in_header' %>
     <% else %>
-      <%= link_to "Sign up", new_user_registration_path %> |
-      <%= link_to "Login", new_user_session_path %>
+      <%= render partial: 'logged_out_header' %>
     <% end %>
 
     <%= yield %>
