@@ -1,15 +1,18 @@
-<h1><%= @writer.full_name %>'s Home Page</h1>
+<h1><%= @writer.full_name %>'s Wall</h1>
 <%= image_tag @writer.user.avatar.url %>
 <h3>Twitter Handle: <%= @writer.twitter %></h3>
 <h3>Location: <%= @writer.location %></h3>
+
 <h3>About Me</h3>
 <p><%= @writer.bio %></p>
+
 <% if user_signed_in? %>
   Logged in as <strong><%= current_user.email %></strong>.
   <h4><%= link_to 'Edit', edit_writer_path(@writer) %></h4> |
 <% end %>
+
 <h2>Stories<h2>
-  <%= @stories.each do |story| %>
-  	<h5><%= story.title %></h3>
-  	<p><%= story.summary %></p>
-  <% end %>
+<% @stories.each do |story| %>
+  <h3><%= link_to story.title, writer_story_path(@writer, story) %></h3>
+  <p><%= story.summary %></p>
+<% end %>

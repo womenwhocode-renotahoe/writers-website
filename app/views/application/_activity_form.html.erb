@@ -1,0 +1,15 @@
+<%= form_for [@writer, @activity] do |f| %>
+  <%= f.label :date %>
+  <%= f.text_field :date %>
+  <br>
+  <%= f.label :goal_id %>
+  <%= f.integer :goal_id %>
+  <br>
+  <%= f.label :description %>
+  <%= f.text_area :body %>
+  <br>
+  <%= f.label :value %>
+  <%= f.integer :value %>
+  <br>
+  <%= f.submit %>
+<% end %>

@@ -1,5 +1,17 @@
 class WriterGoalsController < ApplicationController
 
+  def index
+    @writer_goals = WriterGoal.all
+  end
+
+  def new
+    @writer_goal = WriterGoal.new
+  end
+
+  def create
+
+  end
+
   def edit
     @writer_goal = WriterGoal.find(params[:id])
   end
