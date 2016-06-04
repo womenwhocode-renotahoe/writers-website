@@ -40,7 +40,7 @@ class WritersController < ApplicationController
     end
   end
 
-  def dashboard
+  def wall
     @writer = Writer.find(params[:id])
     @stories = @writer.stories.all
   end
