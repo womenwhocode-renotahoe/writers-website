@@ -17,7 +17,6 @@ ActiveRecord::Schema.define(version: 20160604212949) do
   enable_extension "plpgsql"
 
   create_table "activities", force: :cascade do |t|
-<<<<<<< Updated upstream
     t.date     "date",           null: false
     t.integer  "writer_goal_id", null: false
     t.text     "description",    null: false
