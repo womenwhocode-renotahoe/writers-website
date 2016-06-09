@@ -20,3 +20,46 @@ goal_posts = Goal.create!(
 	unit: 'Count',
 	visible: true)
 
+# Writer 1
+user1 = User.create!(
+	email: 'user_1@new2me.com',
+	password: 'testpage',
+	admin: false)
+
+writer_1 = Writer.create!(
+  user_id: user1.id,
+  full_name: 'Tina Talksalot',
+  twitter: '@bla_bla',
+  location: 'Reno',
+  bio: 'Started creating stories before I could write.'
+  )
+
+# Writer 2
+user2 = User.create!(
+	email: 'me_me@allaboutme.com',
+	password: 'testpage',
+	admin: false)
+
+
+writer_2 = Writer.create!(
+  user_id: user2.id,
+  full_name: 'Suzy SeeMe',
+  twitter: '@lookatme',
+  location: 'Reno',
+  bio: 'childrens stories are my thing.'
+  )
+
+# Writer 3
+user3 =User.create!(
+  email: 'fingers_crossed@HopeThisWorks.com',
+  password: 'testpage',
+  admin: false)
+
+writer_3 = Writer.create!(
+  user_id: user3.id,
+  full_name: 'Mary Maybe',
+  twitter: '@notU',
+  location: 'Sparks',
+  bio: 'Started writing mystery ghost stories and real life mysteries when my house-spirit seemed to be asking for help.'
+  )
+
