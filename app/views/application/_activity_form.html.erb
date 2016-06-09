@@ -1,15 +1,14 @@
 <%= form_for [@writer, @activity] do |f| %>
   <%= f.label :date %>
-  <%= f.text_field :date %>
+  <%= f.date_select :date %>
   <br>
-  <%= f.label :goal_id %>
-  <%= f.integer :goal_id %>
-  <br>
-  <%= f.label :description %>
-  <%= f.text_area :body %>
+  <%= f.fields_for :writer_goal do | wg | %> 
+    <%= wg.label :goal %>
+    <%= wg.collection_select(:goal_id, Goal.all, :id, :activity_type) %><br />
+  <% end %>
   <br>
   <%= f.label :value %>
-  <%= f.integer :value %>
+  <%= f.text_field :value %>
   <br>
   <%= f.submit %>
 <% end %>

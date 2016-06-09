@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :writers, only: [:index, :new, :create, :show, :edit, :update, :wall] do
     resources :stories
     resources :writer_goals
+    resources :activities, except: [:show]
   end
   get '/writers/:id/wall', to: 'writers#wall', as: 'wall'
 end

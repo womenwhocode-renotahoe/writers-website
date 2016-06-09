@@ -1,0 +1,7 @@
+<h1><%= @writer.full_name %>'s Activity Feed</h1>
+<h3><%= link_to 'New Activity', new_writer_activity_path(@writer) %></h3>
+<% @activities.each do |activity| %>
+  <p><%= activity.description %>: <%= activity.value %> on <%= activity.date %></p>
+  <%= link_to 'Edit', edit_writer_activity_path(@writer, activity) %>
+  <%= link_to 'Delete', writer_activity_path(@writer, activity), method: :delete %>
+<% end %>
