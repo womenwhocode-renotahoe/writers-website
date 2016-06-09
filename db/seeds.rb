@@ -26,12 +26,12 @@ user1 = User.create!(
 	password: 'testpage',
 	admin: false)
 
-writer_1 = Writer.create!(
+writer1 = Writer.create!(
   user_id: user1.id,
   full_name: 'Tina Talksalot',
   twitter: '@bla_bla',
   location: 'Reno',
-  bio: 'Started creating stories before I could write.'
+  bio: 'Started creating stories before I could write. I love writing about real life events, bringing animation trhough words to the imagination.'
   )
 
 # Writer 2
@@ -40,13 +40,12 @@ user2 = User.create!(
 	password: 'testpage',
 	admin: false)
 
-
 writer_2 = Writer.create!(
   user_id: user2.id,
   full_name: 'Suzy SeeMe',
   twitter: '@lookatme',
   location: 'Reno',
-  bio: 'childrens stories are my thing.'
+  bio: 'Childrens stories are my thing. Fostering the imagination or kids, teaching for a greater future.'
   )
 
 # Writer 3
