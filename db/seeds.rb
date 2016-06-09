@@ -26,8 +26,8 @@ user1 = User.create!(
 	password: 'testpage',
 	admin: false)
 
-writer1 = Writer.create!(
-  user_id: user1.id,
+writer1 = Writer.find_or_initialize_by(user_id: user1.id)
+writer1.update!(
   full_name: 'Tina Talksalot',
   twitter: '@bla_bla',
   location: 'Reno',
@@ -40,8 +40,8 @@ user2 = User.create!(
 	password: 'testpage',
 	admin: false)
 
-writer_2 = Writer.create!(
-  user_id: user2.id,
+writer2 = Writer.find_or_initialize_by(user_id: user2.id)
+writer2.update!(
   full_name: 'Suzy SeeMe',
   twitter: '@lookatme',
   location: 'Reno',
@@ -54,8 +54,8 @@ user3 =User.create!(
   password: 'testpage',
   admin: false)
 
-writer_3 = Writer.create!(
-  user_id: user3.id,
+writer3 = Writer.find_or_initialize_by(user_id: user3.id)
+writer3.update!(
   full_name: 'Mary Maybe',
   twitter: '@notU',
   location: 'Sparks',
