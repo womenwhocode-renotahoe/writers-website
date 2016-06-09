@@ -3,7 +3,7 @@ class ActivitiesController < ApplicationController
 
   def index
     @writer = Writer.find(params[:writer_id])
-    @activities = @writer.activities.includes(writer_goal: [:goal])
+    @activities = @writer.activities.includes(writer_goal: [:goal]).order(date: :desc)
   end
 
   def new
