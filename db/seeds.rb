@@ -31,8 +31,15 @@ writer1.update!(
   full_name: 'Tina Talksalot',
   twitter: '@bla_bla',
   location: 'Reno',
-  bio: 'Started creating stories before I could write. I love writing about real life events, bringing animation trhough words to the imagination.'
+  bio: 'Started creating stories before I could write. I love writing about real life events, bringing animation through words to the imagination.'
   )
+
+story1 = Story.create!(
+   writer_id: writer1.id,
+   title: "The Case of The Lower Case Letter",
+   summary: "The famous lexical semanticist Professor Edgar Nettleston had been found dead, a gunshot wound to the head.",
+   body: "She breezed into my office one cold September morning. I had been enjoying a hot cup of Starbuck's finest and surfing the web for local news. The famous lexical semanticist Professor Edgar Nettleston had been found dead, a gunshot wound to the head. The police verdict was suicide.
+     She held out an elegant hand as she floated towards me and I glimpsed a wedding band with a stone the size of a peanut M&M.")
 
 # Writer 2
 user2 = User.create!(
