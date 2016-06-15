@@ -55,6 +55,12 @@ writer2.update!(
   bio: 'Childrens stories are my thing. Fostering the imagination or kids, teaching for a greater future.'
   )
 
+story2 = Story.create!(
+   writer_id: writer2.id,
+   title: "A dog named Roo",
+   summary: "Roo, an excitable, friendly, squeaky toy hogging dog.",
+   body: "She blasted through the screen door without a care in the world. The only thing on her mind was the big red ball that she was sure she heard calling her name, ’Roo, Roo.’ She jumped across from the deck to the lawn, completely missing the walkway, pouncing on the ball as it let out a terrified squeak.")
+
 # Writer 3
 user3 =User.create!(
   email: 'fingers_crossed@HopeThisWorks.com',
@@ -68,4 +74,10 @@ writer3.update!(
   location: 'Sparks',
   bio: 'Started writing mystery ghost stories and real life mysteries when my house-spirit seemed to be asking for help.'
   )
+
+story3 = Story.create!(
+   writer_id: writer3.id,
+   title: "The girl in the hallway.",
+   summary: "The story about a little girl lost in time, trapped in another world.",
+   body: "Her name was Sarah when she lived in the 1800’s, on a little farm where this subdivision now stands.")
 
