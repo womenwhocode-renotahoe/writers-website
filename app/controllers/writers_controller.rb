@@ -20,7 +20,8 @@ class WritersController < ApplicationController
   end
 
   def show
-    @writer = Writer.find(params[:id])
+    @user = User.find(params[:id])
+    @writer = Writer.find_by_user_id(@user.id)
     @stories = @writer.stories.published
   end
 
