@@ -16,8 +16,14 @@ class User < ActiveRecord::Base
   private
 
   def create_writer(user)
+    return if user.admin
     writer = Writer.new
     writer.user_id = user.id
     writer.save!
   end
+
+  def user_is_admin?(user)
+    user.admin
+  end
+
 end

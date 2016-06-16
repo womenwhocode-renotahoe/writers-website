@@ -1,10 +1,11 @@
+<%= render partial: "admin_nav" %>
 <table>
   <thead>
     <th>Name</th>
     <th>Twitter Handle</th>
     <th>Location</th>
-    <th>Visit Page</th>
-    <th>Visit Writers Wall</th>
+    <th>Writer's Profile</th>
+    <th>Writer's Wall</th>
   </thead>
   <tbody>
     <% @writers.each do |writer| %>
@@ -12,8 +13,8 @@
         <td><%= writer.full_name %></td>
         <td><%= writer.twitter %></td>
         <td><%= writer.location %></td>
-        <td><%= link_to 'Profile', writer_path(writer) %></td>
-        <td><%= link_to 'Wall', wall_path(writer) %></td>
+        <td><%= link_to 'Profile', edit_writer_path(writer) %></td>
+        <td><%= link_to 'Wall', writer_path(writer) %></td>
       </tr>
     <% end %>
   </tbody>

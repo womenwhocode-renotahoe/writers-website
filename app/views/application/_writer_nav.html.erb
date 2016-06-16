@@ -1,0 +1,9 @@
+<% if user_signed_in? %>
+  Logged in as <strong><%= current_user.email %></strong>.
+  <%= link_to 'Edit User Information', edit_user_registration_path %> |
+  <%= link_to 'Edit Writer Profile', edit_writer_path(current_user.writer) %> |
+  <%= link_to 'Wall', wall_path(current_user) %> |
+  <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+<% else %>
+  <%= render partial: 'logged_out_header' %>
+<% end %>	
