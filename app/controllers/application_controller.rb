@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
     if admin_user_signed_in? then
       writers_path
     else
-      writer_path(resource)
+      wall_path(current_user.id)
     end
   end
 

@@ -42,8 +42,14 @@ class WritersController < ApplicationController
   end
 
   def wall
-    @writer = Writer.find(params[:id])
-    @stories = @writer.stories.all
+    @user = User.find(params[:id])
+    if current_user == @user then
+      @writer = Writer.find_by_user_id(@user.id)
+      @stories = @writer.stories.all
+    else
+      flash.now[:error] = "Not your wall"
+      redirect_to writer_path
+    end
   end
 
   private
