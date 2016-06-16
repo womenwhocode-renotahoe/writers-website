@@ -14,7 +14,7 @@
         <td><%= writer.twitter %></td>
         <td><%= writer.location %></td>
         <td><%= link_to 'Profile', edit_writer_path(writer) %></td>
-        <td><%= link_to 'Wall', writer_path(writer) %></td>
+        <td><%= link_to 'Wall', writer_path(writer.user) %></td>
       </tr>
     <% end %>
   </tbody>
