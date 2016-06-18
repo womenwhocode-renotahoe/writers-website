@@ -5,7 +5,6 @@
     <th>Name</th>
     <th>Twitter Handle</th>
     <th>Location</th>
-    <th>Writer's Profile</th>
     <th>Writer's Website</th>
   </thead>
   <tbody>
@@ -14,8 +13,7 @@
         <td><%= writer.full_name %></td>
         <td><%= writer.twitter %></td>
         <td><%= writer.location %></td>
-        <td><%= link_to 'Profile', edit_writer_path(writer) %></td>
-        <td><%= link_to 'Website', writer_path(writer.user) %></td>
+        <td><%= link_to 'Website', writer_path(writer) %></td>
       </tr>
     <% end %>
   </tbody>
