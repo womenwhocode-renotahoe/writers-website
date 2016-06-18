@@ -33,7 +33,7 @@ class WritersController < ApplicationController
     if @writer.update(writer_params)
       @writer.user.state << 'Profile updated' unless @writer.user.state.include?('Profile updated')
       @writer.user.save!
-      redirect_to writer_path(@writer)
+      redirect_to wall_path(@writer)
     else
       flash.now[:error] = "Failed to update writer"
       render :edit
