@@ -37,7 +37,8 @@
   <div class="accordion-content" data-tab-content>
     <h3><%= @latest_story.title %></h3>
     <p><%= @latest_story.summary %></p>
-      <%= link_to 'Edit', writer_story_path(@writer, @latest_story) %>
+      <%= link_to 'Edit', writer_story_path(@writer, @latest_story) %> |
+      <%= link_to 'All Stories', writer_stories_path(@writer) %>
   </div>
 </li>
 </ul>

@@ -15,7 +15,7 @@ class StoriesController < ApplicationController
     @story.writer_id = @writer.id
     if @story.save
       flash[:success] = "Created new story"
-      redirect_to writer_story_path(@writer, @story)
+      redirect_to wall_path(@writer)
     else
       flash.now[:error] = "Failed to create story"
       render :new
