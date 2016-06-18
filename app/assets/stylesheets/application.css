@@ -13,5 +13,19 @@
  *= require_tree .
  *= require_self
  *= require foundation_and_overrides
- 
+
  */
+
+
+.space {
+  margin-top: 35px;
+}
+
+.writersfield {
+
+height: 100%;
+width: 200px;
+background-color: #2a4163;
+float: left;
+
+}

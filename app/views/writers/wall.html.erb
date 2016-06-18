@@ -1,12 +1,23 @@
+
 <% if current_user.state == 'No actions taken' then %>
   <p>You will need to complete your profile before continuing</p>
   <%= link_to 'Edit Writer Profile', edit_writer_path(current_user.writer) %>
 <% else %>
-	<%= render partial: "writer_nav" %>
 
-  <h1><%= @writer.full_name %>'s Wall</h1>
-  <h2>Goals</h2>
-  <h2>Activities</h2>
-  <h2>Current Story</h2>
-  <h2>Latest Blog Post</h2>
+	<%= render partial: "writer_nav"%>
+
+<div class = "writersfield"></div>
+
+
+  <div class ="row space">
+  <div class="small-6 large-centered small-centered medium-centered columns">
+
+
+  <h3>Goals</h3>
+  <h3>Activities</h3>
+  <h3>Current Story</h3>
+  <h3>Latest Blog Post</h3>
 <% end %>
+
+</div>
+</div>
