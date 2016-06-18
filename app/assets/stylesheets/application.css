@@ -18,7 +18,7 @@
 
 
 .space {
-  margin-top: 35px;
+  margin-top: 90px;
 }
 
 .writersfield {
@@ -28,4 +28,10 @@ width: 200px;
 background-color: #2a4163;
 float: left;
 
+}
+
+.fontsize {
+
+  font-size: 20px;
+  color: #2a4163;
 }
