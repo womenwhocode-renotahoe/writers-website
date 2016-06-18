@@ -6,7 +6,9 @@
 
   <h1><%= @writer.full_name %>'s Wall</h1>
   <h2>Goals</h2>
+  <%= link_to 'My Goals', writer_writer_goals_path(current_user.writer) %>
   <h2>Activities</h2>
+  <%= link_to 'My Activities', writer_activities_path(current_user.writer) %>
   <h2>Current Story</h2>
   <h2>Latest Blog Post</h2>
 <% end %>
