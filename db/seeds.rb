@@ -92,4 +92,3 @@ story3 = Story.create!(
    body: "Her name was Sarah when she lived in the 1800’s, on a little farm where this subdivision now stands.",
   published: true
   )
-
