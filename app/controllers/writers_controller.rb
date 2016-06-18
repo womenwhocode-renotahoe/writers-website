@@ -43,6 +43,7 @@ class WritersController < ApplicationController
   def wall
     @writer = Writer.find(params[:id])
     @user = @writer.user
+    @latest_story = @writer.stories.latest.first
     if current_user == @user then
       @stories = @writer.stories.all
     else

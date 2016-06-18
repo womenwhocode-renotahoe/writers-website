@@ -21,6 +21,9 @@
   <h2>Activities</h2>
   <%= link_to 'My Activities', writer_activities_path(current_user.writer) %>
   <h2>Current Story</h2>
+  <h3><%= @latest_story.title %></h3>
+  <p><%= @latest_story.summary %></p>
+  <%= link_to 'Edit', writer_story_path(@writer, @latest_story) %>
   <h2>Latest Blog Post</h2>
 
 <% end %>

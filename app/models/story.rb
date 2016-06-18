@@ -3,4 +3,7 @@ class Story < ActiveRecord::Base
   scope :published, -> {
   	where(published: true)
   }
+  scope :latest, -> {
+    order('updated_at DESC').limit(1)
+  }
 end
