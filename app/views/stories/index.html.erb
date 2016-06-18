@@ -1,0 +1,6 @@
+<h1>My Stories</h1>
+<%= link_to 'New Story', new_writer_story_path(@writer) %>
+<% @stories.each do |story| %>
+  <h2><%= link_to story.title, writer_story_path(@writer, story) %></h2>
+  <p><%= story.summary %></p>
+<% end %>

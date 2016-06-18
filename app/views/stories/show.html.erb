@@ -7,4 +7,5 @@
 <p><%= @story.body %></p>
 <p>Created at: <%=@story.created_at %>, Published at: <%=@story.date_time_published %> </p>
 
-
+<%= link_to 'Edit', edit_writer_story_path(@writer, @story) %>
+<%= link_to 'Delete', writer_story_path(@writer, @story), method: :delete %>
