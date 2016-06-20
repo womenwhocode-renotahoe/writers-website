@@ -1,6 +1,9 @@
-
-
-
-
-<%= link_to "Logout", destroy_user_session_path, method: :delete %> |
-<%= link_to 'Admin Profile', edit_user_registration_path(current_user) %>
+<div class="top-bar">
+  <div class="top-bar-right">
+    <ul class="menu">
+      <li><%= link_to 'Admin Dashboard', writers_path %></li>
+      <li><%= link_to 'Edit Profile', edit_user_registration_path(current_user) %></li>
+      <li><%= link_to "Logout", destroy_user_session_path, method: :delete %> </li>
+    </ul>
+  </div>
+</div>
