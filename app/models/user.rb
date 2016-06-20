@@ -13,6 +13,10 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  def is_admin?
+    self.admin
+  end
+
   private
 
   def create_writer(user)
@@ -22,7 +26,7 @@ class User < ActiveRecord::Base
     writer.save!
   end
 
-  def user_is_admin?(user)
+  def user_is_admin?
     user.admin
   end
 
