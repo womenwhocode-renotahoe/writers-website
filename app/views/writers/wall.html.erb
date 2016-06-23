@@ -32,10 +32,15 @@
 <li class="accordion-item active" data-accordion-item>
   <a href="#" class="accordion-title fontsize">Current Story</a>
   <div class="accordion-content" data-tab-content>
-    <h3><%= @latest_story.title %></h3>
-    <p><%= @latest_story.summary %></p>
+    <% if @latest_story %>
+      <h3><%= @latest_story.title %></h3>
+      <p><%= @latest_story.summary %></p>
       <%= link_to 'Edit', writer_story_path(@writer, @latest_story) %> |
       <%= link_to 'All Stories', writer_stories_path(@writer) %>
+    <% else %>
+      <h3>Time to write a story!</h3>
+      <%= link_to 'New', new_writer_story_path(@writer) %>
+    <% end %>
   </div>
 </li>
 </ul>
