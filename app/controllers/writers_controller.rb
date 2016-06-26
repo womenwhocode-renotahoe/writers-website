@@ -50,6 +50,7 @@ class WritersController < ApplicationController
       flash.now[:error] = "Not your wall"
       redirect_to writer_path
     end
+    @goals = @writer.goals
   end
 
   private

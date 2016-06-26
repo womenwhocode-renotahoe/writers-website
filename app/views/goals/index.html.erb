@@ -1,0 +1,9 @@
+<%= render partial: "writer_nav"%>
+<h1>Your Goals</h1>
+<% @goals.each do |goal| %>
+  <p><%= goal.verb %> 
+     <%= goal.count %> 
+  	 <%= goal.noun %> 
+  	 <%= goal.freq %>
+  |  <%= link_to 'Update', edit_writer_goal_path(@writer, goal) %></p>
+<% end %>

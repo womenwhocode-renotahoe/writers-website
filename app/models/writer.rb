@@ -1,22 +1,49 @@
 class Writer < ActiveRecord::Base
-  after_create do |writer|
-    create_writer_goals(writer)
-  end
+  after_create :set_initial_goals
 
   has_many :stories
-  has_many :writer_goals
-  has_many :goals, through: :writer_goals
+  has_many :goals
   has_many :activities
   belongs_to :user
 
   private
 
-  def create_writer_goals(writer)
-    Goal.all.each do |goal|
-      WriterGoal.create!(
-        writer_id: writer.id,
-        goal_id: goal.id,
-        value: 0)
-    end
+  def set_initial_goals
+    goal1 = Goal.create!(
+      writer_id: self.id,
+      title: 'Creative Goal',
+      verb: 'write',
+      count: 2000,
+      noun: 'words',
+      freq: 'daily',
+      by_date: Date.tomorrow.end_of_day)
+
+    goal2 = Goal.create!(
+      writer_id: self.id,
+      title: 'Sharing Goal',
+      verb: 'blog',
+      count: 1,
+      noun: 'post',
+      freq: 'weekly',
+      by_date: Date.current+6)
+
+    goal3 = Goal.create!(
+      writer_id: self.id,
+      title: 'Develop Goal',
+      verb: 'study',
+      count: 3,
+      noun: 'hours',
+      freq: 'weekly',
+      by_date: Date.current+6)
+
+    goal4 = Goal.create!(
+      writer_id: self.id,
+      title: 'Publish Goal',
+      verb: 'edit',
+      count: 1,
+      noun: 'hours',
+      freq: 'daily',
+      by_date: Date.tomorrow.end_of_day)
   end
+
 end

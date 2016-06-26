@@ -1,4 +1,0 @@
-<h1>Your Goals</h1>
-<% @writer_goals.each do |writer_goal| %>
-  <p><%= writer_goal.goal.activity_type %>: <%= writer_goal.value %> <%= writer_goal.goal.unit %> | <%= link_to 'Update', edit_writer_writer_goal_path(@writer, writer_goal) %></p>
-<% end %>
