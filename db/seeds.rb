@@ -2,14 +2,16 @@
 admin_user = User.create!(
 	email: 'admin@womenwhocoderenotahoe.com',
 	password: 'Hermione',
-	admin: true)
+	admin: true,
+  time_zone: 'Pacific Time (US & Canada)')
 
 # Writer 1
 user1 = User.create!(
 	email: 'tina@gmail.com',
 	password: 'testpage',
 	admin: false,
-  state: 'Profile complete'
+  state: 'Profile complete',
+  time_zone: 'Pacific Time (US & Canada)'
   )
 
 writer1 = Writer.find_or_initialize_by(user_id: user1.id)
@@ -61,7 +63,8 @@ user2 = User.create!(
 	email: 'suzy@gmail.com',
 	password: 'testpage',
 	admin: false,
-  state: 'Profile complete'
+  state: 'Profile complete',
+  time_zone: 'Pacific Time (US & Canada)'
   )
 
 writer2 = Writer.find_or_initialize_by(user_id: user2.id)
@@ -112,7 +115,8 @@ user3 =User.create!(
   email: 'mary@gmail.com',
   password: 'testpage',
   admin: false,
-  state: 'Profile complete'
+  state: 'Profile complete',
+  time_zone: 'Pacific Time (US & Canada)'
   )
 
 writer3 = Writer.find_or_initialize_by(user_id: user3.id)

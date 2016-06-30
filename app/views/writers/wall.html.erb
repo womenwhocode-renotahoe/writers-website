@@ -32,7 +32,9 @@
   <li class="accordion-item active" data-accordion-item>
       <%= link_to 'Today I...', writer_activities_path(current_user.writer), class: "accordion-title fontsize" %>
     <div class="accordion-content" data-tab-content>
-      while loop Activities
+      <% @activities.each do |activity| %>
+        <p><%= activity.count %> on <%= activity.date %>
+      <% end %>
     </div>
   </li>
 </ul>

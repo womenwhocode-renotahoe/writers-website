@@ -44,6 +44,7 @@ class WritersController < ApplicationController
     @writer = Writer.find(params[:id])
     @user = @writer.user
     @latest_story = @writer.stories.latest.first
+    @activities = @writer.activities.latest
     if current_user == @user then
       @stories = @writer.stories.all
     else
