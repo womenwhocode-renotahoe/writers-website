@@ -3,7 +3,7 @@ class ActivitiesController < ApplicationController
 
   def index
     @writer = Writer.find(params[:writer_id])
-    @activities = @writer.activities.includes(writer_goal: [:goal]).order(date: :desc)
+    @activities = @writer.activities.includes(:goal).order(date: :desc)
   end
 
   def new
@@ -12,14 +12,12 @@ class ActivitiesController < ApplicationController
 
   def create
     @activity = Activity.new(activity_params)
-    convert_goal(params[:activity][:writer_goal][:goal_id])
     @activity.writer_id = @writer.id
-    if @activity.save
-      flash[:success] = 'Activity logged'
-      redirect_to writer_activities_path(@writer)
-    else
-      flash.now[:error] = 'Failed to log activity'
-      render :new
+    @activity.save!
+
+    respond_to do |format|
+      format.html { redirect_to @activity }
+      format.js
     end
   end
 
@@ -29,7 +27,6 @@ class ActivitiesController < ApplicationController
 
   def update
     @activity = Activity.find(params[:id])
-    convert_goal(params[:activity][:writer_goal][:goal_id])
     if @activity.update(activity_params)
       flash[:success] = 'Activity updated'
       redirect_to writer_activities_path(@writer)
@@ -53,13 +50,7 @@ class ActivitiesController < ApplicationController
   private
 
   def activity_params
-    params.require(:activity).permit(:date, :value, { writer_goal_attributes: [:goal_id] })
-  end
-
-  def convert_goal(goal_id)
-    @goal = Goal.find(goal_id)
-    @activity.description = @goal.activity_type
-    @activity.writer_goal_id = WriterGoal.find_by(writer_id: @writer.id, goal_id: goal_id).id
+    params.require(:activity).permit(:goal_id, :count, :date)
   end
 
   def set_writer

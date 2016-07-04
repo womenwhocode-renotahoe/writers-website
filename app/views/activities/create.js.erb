@@ -1,0 +1,3 @@
+$("#activities-summary").html("<%= j ( render @writer.activities.latest ) %>");
+$("#progress_goals").html("<%= j render partial: 'progress_goal', collection: @writer.goals %>");
+$("#activity_count").val("");

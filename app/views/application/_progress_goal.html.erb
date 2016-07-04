@@ -1,0 +1,11 @@
+<div class="column">
+  <div class="callout small">
+    <h3><%= progress_goal.title %></h3>
+    <% if progress_goal.achieved? %>
+      <h4><span class="success badge">goal</i></h4>
+    <% else %>
+      <h4>Time to <%= progress_goal.verb %></h4>
+      <p><%= progress(progress_goal) %>
+    <% end %>
+  </div>
+</div>

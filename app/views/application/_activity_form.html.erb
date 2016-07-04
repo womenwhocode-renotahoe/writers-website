@@ -1,16 +1,10 @@
 <%= form_for [@writer, @activity] do |f| %>
+  Today I 
 
-  <%= f.fields_for :goal do | wg | %> 
-    <%= wg.label :goal %>
-    <%= wg.collection_select(:goal_id, @writer.goals, :id, :verb) %>
-  <% end %>
-  <br>
-  <%= f.label :count %>
+  <%= f.collection_select(:goal_id, @writer.goals, :id, :verb_past_tense) %>
+  
   <%= f.number_field :count %>
-
-  <%= f.label :date %>
-  <%= f.date_select :date %>
-  <br>
-
+  <%= f.hidden_field :date, :value => DateTime.now %>
   <%= f.submit %>
+
 <% end %>

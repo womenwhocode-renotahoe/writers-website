@@ -45,18 +45,31 @@ class WritersController < ApplicationController
     @user = @writer.user
     @latest_story = @writer.stories.latest.first
     @activities = @writer.activities.latest
+    @activity = Activity.new
     if current_user == @user then
       @stories = @writer.stories.all
     else
       flash.now[:error] = "Not your wall"
       redirect_to writer_path
     end
-    @goals = @writer.goals
+    @progress_goals = @writer.goals
+    respond_to do |format|
+      format.html
+      format.json
+    end
   end
 
   private
 
   def writer_params
     params.require(:writer).permit(:twitter, :full_name, :bio, :location, :birthdate)
+  end
+
+  def set_activity
+    @activity = @writer.activity.find(params[:id])
+  end
+
+  def activity_params
+    params.require(:activity).permit(:goal_id, :count, :date)
   end
 end

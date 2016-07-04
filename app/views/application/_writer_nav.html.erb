@@ -1,7 +1,7 @@
 <div class="top-bar">
   <div class="top-bar-left">
     <ul class="menu">
-      <li class="menu-text">writer's logo goes here</li>
+      <li class="menu-text">writer's logo</li>
     </ul>
   </div>
   <div class="top-bar-right">
@@ -9,8 +9,8 @@
       <li><%= link_to 'Write on Your Wall', wall_path(@writer) %></li>
       <li><%= link_to 'Edit Your Profile', edit_user_registration_path(current_user) %></li>
       <li><%= link_to 'Edit Your Details', edit_writer_path(@writer) %></li>
-      <li><%= link_to 'Edit Your Goals', writer_goals_path(current_user.writer) %></li>
-      <li><%= link_to "Logout", destroy_user_session_path, method: :delete %> </li>
+      <li><%= link_to 'View Your Progress', goals_path(@writer) %></li>
+      <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %> </li>
     </ul>
   </div>
 </div>

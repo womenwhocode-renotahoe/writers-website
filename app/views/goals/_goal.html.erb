@@ -1,0 +1,10 @@
+<div class="column" id="goal-<%= goal.id %>">
+	<div class="callout secondary">
+	<h3><%= goal.title %></h3>
+	<p><%= (goal.verb).titleize %>
+   	 <%= goal.count %> 
+   	 <%= goal.noun.pluralize(goal.count) %>
+   	 <%= goal_freq(goal) %></p>
+     <%= link_to 'Edit', edit_writer_goal_path(goal, goal.writer_id), remote: true %>
+	</div>
+</div>

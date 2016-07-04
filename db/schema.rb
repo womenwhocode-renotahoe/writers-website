@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160627032203) do
+ActiveRecord::Schema.define(version: 20160703011026) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,17 +29,18 @@ ActiveRecord::Schema.define(version: 20160627032203) do
   add_index "activities", ["writer_id"], name: "index_activities_on_writer_id", using: :btree
 
   create_table "goals", force: :cascade do |t|
-    t.integer  "writer_id",                     null: false
-    t.string   "title",                         null: false
-    t.string   "verb",                          null: false
-    t.integer  "count",         default: 1,     null: false
-    t.string   "noun",                          null: false
+    t.integer  "writer_id",                       null: false
+    t.string   "title",                           null: false
+    t.string   "verb",                            null: false
+    t.integer  "count",           default: 1,     null: false
+    t.string   "noun",                            null: false
     t.integer  "freq"
-    t.integer  "current_count"
+    t.integer  "current_count",   default: 0,     null: false
     t.datetime "by_date"
-    t.boolean  "achieved",      default: false, null: false
-    t.datetime "created_at",                    null: false
-    t.datetime "updated_at",                    null: false
+    t.boolean  "achieved",        default: false, null: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
+    t.string   "verb_past_tense"
   end
 
   add_index "goals", ["writer_id"], name: "index_goals_on_writer_id", using: :btree

@@ -2,75 +2,62 @@
   <p>You will need to complete your profile before continuing</p>
   <%= link_to 'Edit Writer Profile', edit_writer_path(@writer) %>
 <% else %>
+  <%= render partial: "writer_nav"%>
 
-<%= render partial: "writer_nav"%>
+  <h2 id="chart" class="text-center">daily word chart goes here</h2>
 
-<h2 class="text-center">daily word chart goes here</h2>
-
-<div class="row small-up-1 medium-up-2 large-up-4">
-  <% @goals.each do |goal| %>
-    <div class="column">
-      <div class="callout small">
-        <h3><%= goal.title %></h3>
-        <% if goal.achieved? %>
-          SMILE
-        <% else %>
-          <h4>Time to <%= goal.verb %></h4>
-          <p><%= progress(goal) %>
-        <% end %>
-      </div>
-    </div>
-  <% end %>
-</div>
-
-<div class = "writersfield"></div>
-
-  <div class ="row space">
-  <div class="large-centered small-centered medium-centered columns">
-
-  <ul class="accordion" data-accordion data-allow-all-closed="true">
-  <li class="accordion-item active" data-accordion-item>
-      <%= link_to 'Today I...', writer_activities_path(current_user.writer), class: "accordion-title fontsize" %>
-    <div class="accordion-content" data-tab-content>
-      <% @activities.each do |activity| %>
-        <p><%= activity.count %> on <%= activity.date %>
-      <% end %>
-    </div>
-  </li>
-</ul>
-
-<ul class="accordion" data-accordion data-allow-all-closed="true">
-<li class="accordion-item active" data-accordion-item>
-  <a href="#" class="accordion-title fontsize">Current Story</a>
-  <div class="accordion-content" data-tab-content>
-    <% if @latest_story %>
-      <h3><%= @latest_story.title %></h3>
-      <p><%= @latest_story.summary %></p>
-      <%= link_to 'Edit', writer_story_path(@writer, @latest_story) %> |
-      <%= link_to 'All Stories', writer_stories_path(@writer) %>
-    <% else %>
-      <h3>Time to write a story!</h3>
-      <%= link_to 'New', new_writer_story_path(@writer) %>
-    <% end %>
+  <div class="row small-up-1 medium-up-2 large-up-4" id="progress_goals">
+    <%= render partial: 'progress_goal', collection: @progress_goals %>
   </div>
-</li>
-</ul>
+  <div class ="row">
+    <div class="large-centered small-centered medium-centered columns">
 
-<ul class="accordion" data-accordion data-allow-all-closed="true">
-<li class="accordion-item active " data-accordion-item>
-  <a href="#" class="accordion-title fontsize">Latest Blog Post</a>
-  <div class="accordion-content" data-tab-content>
-    will loop through blog post
+    <ul class="accordion" data-accordion data-multi-expand="true" data-allow-all-closed="true">
+      <li class="accordion-item" data-accordian-item>
+        <a href="#" class="accordion-title"><h5>Today I...</h5></a>
+        <div class="accordion-content" data-tab-content>
+          <div class="callout secondary" id="activities-summary">
+            <% if @activities.empty? %>
+              <h3>Time to work!</h3>
+            <% else %>
+              <%= render @activities %>
+            <% end %>
+          </div>
+          <%= form_for [@writer, @activity], remote: true do |f| %>
+            <div class="input-group">
+              <span class="input-group-label">How many words did you write today?</span>
+              <%= f.number_field :count, class: "input-group-field" %>  
+              <%= f.hidden_field :goal_id, :value => 1 %>
+              <%= f.hidden_field :date, :value => DateTime.now %>
+
+              <%= f.submit class: "input-group-button button" %>
+            </div>
+          <% end %>
+        </div>
+      </li>
+
+      <li class="accordion-item" data-accordion-item>
+        <a href="#" class="accordion-title"><h5>Current Story</h5></a>
+        <div class="accordion-content" data-tab-content>
+          <% if @latest_story %>
+            <h3><%= @latest_story.title %></h3>
+            <p><%= @latest_story.summary %></p>
+            <%= link_to 'Edit', writer_story_path(@writer, @latest_story) %> |
+            <%= link_to 'All Stories', writer_stories_path(@writer) %>
+          <% else %>
+            <h3>Time to write a story!</h3>
+            <%= link_to 'New', new_writer_story_path(@writer) %>
+          <% end %>
+        </div>
+      </li>
+
+      <li class="accordion-item active " data-accordion-item>
+        <a href="#" class="accordion-title fontsize"><h5>Latest Blog Post</h5></a>
+        <div class="accordion-content" data-tab-content>
+          will loop through blog post
+        </div>
+      </li>
+    </ul>
+    </div>
   </div>
-</li>
-</ul>
-
-
-<!--  <h1><%= @writer.full_name %>'s Wall</h1> -->
-
-
-
 <% end %>
-
-</div>
-</div>

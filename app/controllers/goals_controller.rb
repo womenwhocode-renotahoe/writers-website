@@ -1,25 +1,21 @@
 class GoalsController < ApplicationController
   before_action :set_writer
+  respond_to :html, :js
 
   def index
     @goals = @writer.goals
   end
 
-  def show
-    @goal = Goal.find(params[:id])
-  end
-
   def edit
-    @goal = Goal.find(params[:id])
+    @goal = @writer.goals.find(params[:id])
   end
 
   def update
     @goal = Goal.find(params[:id])
     if @goal.update(goal_params)
-      flash[:success] = "Goal updated"
-      redirect_to writer_path(@goal.writer_id)
+      render :update
     else
-      flash.now[:error] = "Goal failed to update"
+      flash.now[:error] = 'Failed to update goal'
       render :edit
     end
   end
@@ -31,6 +27,6 @@ class GoalsController < ApplicationController
   end
 
   def goal_params
-    params.require(:goal).permit(:goal_count, :goal_freq)
+    params.require(:goal).permit(:count, :freq)
   end
 end
