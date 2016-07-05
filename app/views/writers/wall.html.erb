@@ -27,7 +27,8 @@
             <div class="input-group">
               <span class="input-group-label">How many words did you write today?</span>
               <%= f.number_field :count, class: "input-group-field" %>  
-              <%= f.hidden_field :goal_id, :value => 1 %>
+              <%= f.hidden_field :goal_id, 
+                                 :value => @writer.goals.where(title: 'Creative Goal').first.id %>
               <%= f.hidden_field :date, :value => DateTime.now %>
 
               <%= f.submit class: "input-group-button button" %>
