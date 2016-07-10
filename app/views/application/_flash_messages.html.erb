@@ -1,0 +1,10 @@
+<% if !flash.empty? %>
+  <% flash.each do |name, msg| %>
+    <% if msg.is_a?(String) %>
+      <div class="callout <%= name.to_s == 'notice' ? 'success' : 'alert' %>">
+        <%= msg %>
+      </div>
+    <% end %>
+  <% end %>
+  <% flash.clear %>
+<% end %>
