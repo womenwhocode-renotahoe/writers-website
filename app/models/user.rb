@@ -20,7 +20,7 @@ class User < ActiveRecord::Base
   private
 
   def create_writer(user)
-    return if user.role == 'admin'
+    return if user.role == 'admin' || user.role == 'visitor'
     writer = Writer.new
     writer.user_id = user.id
     writer.save!
