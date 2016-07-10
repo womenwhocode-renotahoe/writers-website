@@ -14,20 +14,16 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   def is_admin?
-    self.admin
+    self.role == 'admin'
   end
 
   private
 
   def create_writer(user)
-    return if user.admin
+    return if user.role == 'admin'
     writer = Writer.new
     writer.user_id = user.id
     writer.save!
-  end
-
-  def user_is_admin?
-    user.admin
   end
 
 end

@@ -2,15 +2,14 @@
 admin_user = User.create!(
 	email: 'admin@womenwhocoderenotahoe.com',
 	password: 'Hermione',
-	admin: true,
+	role: 'admin',
   time_zone: 'Pacific Time (US & Canada)')
 
 # Writer 1
 user1 = User.create!(
 	email: 'tina@gmail.com',
 	password: 'testpage',
-	admin: false,
-  state: 'Profile complete',
+	role: 'writer',
   time_zone: 'Pacific Time (US & Canada)'
   )
 
@@ -62,8 +61,7 @@ Thought I'd something more to say.",
 user2 = User.create!(
 	email: 'suzy@gmail.com',
 	password: 'testpage',
-	admin: false,
-  state: 'Profile complete',
+  role: 'writer',
   time_zone: 'Pacific Time (US & Canada)'
   )
 
@@ -114,8 +112,7 @@ And back on the road agin.",
 user3 =User.create!(
   email: 'mary@gmail.com',
   password: 'testpage',
-  admin: false,
-  state: 'Profile complete',
+  role: 'writer',
   time_zone: 'Pacific Time (US & Canada)'
   )
 

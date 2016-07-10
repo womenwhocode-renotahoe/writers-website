@@ -7,15 +7,17 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   def after_sign_in_path_for(resource)
-    if admin_user_signed_in? then
-      writers_path
+    return writers_path if admin_user_signed_in?
+    writer = Writer.find_by_user_id(current_user.id)
+    if writer.full_name.blank? then
+      edit_writer_path(writer)
     else
-      wall_path(current_user.writer.id)
+      wall_path(writer)
     end
   end
 
   def admin_user_signed_in?
-    user_signed_in? && current_user.admin?
+    user_signed_in? && current_user.role == "admin"
   end
 
   def current_user_or_admin?

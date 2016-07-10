@@ -31,7 +31,6 @@ class WritersController < ApplicationController
   def update
     @writer = Writer.find(params[:id])
     if @writer.update(writer_params)
-      @writer.user.state << 'Profile updated' unless @writer.user.state.include?('Profile updated')
       @writer.user.save!
       redirect_to wall_path(@writer)
     else
