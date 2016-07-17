@@ -20,7 +20,7 @@ class Writer < ActiveRecord::Base
       verb_past_tense: 'wrote',
       count: 2000,
       noun: 'word',
-      freq: 0,
+      freq: 1,
       current_count: 0,
       by_date: 0.days.from_now.end_of_day)
 
@@ -31,7 +31,7 @@ class Writer < ActiveRecord::Base
       verb_past_tense: 'blogged',
       count: 1,
       noun: 'post',
-      freq: 6,
+      freq: 7,
       current_count: 0,
       by_date: 6.days.from_now.end_of_day)
 
@@ -42,7 +42,7 @@ class Writer < ActiveRecord::Base
       verb_past_tense: 'studied',
       count: 3,
       noun: 'hour',
-      freq: 3,
+      freq: 4,
       current_count: 0,
       by_date: 3.days.from_now.end_of_day)
 
@@ -53,7 +53,7 @@ class Writer < ActiveRecord::Base
       verb_past_tense: 'edited',
       count: 1,
       noun: 'hour',
-      freq: 30,
+      freq: 31,
       current_count: 0,
       by_date: 30.days.from_now.end_of_day)
   end

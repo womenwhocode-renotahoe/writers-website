@@ -1,4 +1,3 @@
-<%= render partial: "admin_nav" if (user_signed_in? && current_user.is_admin?) %>
 <h1><%= @writer.full_name %>'s Website</h1>
 <%= image_tag @writer.user.avatar.url %>
 <h3>Twitter Handle: <%= @writer.twitter %></h3>

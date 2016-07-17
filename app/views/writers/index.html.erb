@@ -1,19 +1,22 @@
-<%= render partial: "admin_nav" %>
-<h1>Admin Dashboard</h1>
+<h1>Featured Writers</h1>
 <table>
   <thead>
     <th>Name</th>
-    <th>Twitter Handle</th>
-    <th>Location</th>
-    <th>Writer's Website</th>
+    <th>Bio</th>
+    <th>Website</th>
+    <% if admin_user_signed_in? %>
+      <th>Admin</th>
+    <% end %>
   </thead>
   <tbody>
     <% @writers.each do |writer| %>
       <tr>
         <td><%= writer.full_name %></td>
-        <td><%= writer.twitter %></td>
-        <td><%= writer.location %></td>
+        <td><%= writer.bio %></td>
         <td><%= link_to 'Website', writer_path(writer) %></td>
+        <% if admin_user_signed_in? %>
+          <td><%= link_to 'Become', become_path(writer) %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>

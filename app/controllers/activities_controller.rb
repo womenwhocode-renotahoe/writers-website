@@ -1,5 +1,6 @@
-class ActivitiesController < ApplicationController
-  before_action :set_writer, except: [:index, :show]
+class ActivitiesController < WritersController
+  before_filter :set_writer
+    before_filter :check_current_owner_writer
 
   def index
     @writer = Writer.find(params[:writer_id])
@@ -53,7 +54,4 @@ class ActivitiesController < ApplicationController
     params.require(:activity).permit(:goal_id, :count, :date)
   end
 
-  def set_writer
-    @writer = current_user.writer
-  end
 end

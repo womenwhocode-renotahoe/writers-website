@@ -1,7 +1,6 @@
-class StoriesController < ApplicationController
-
-  before_action :set_writer
-
+class StoriesController < WritersController
+  before_filter :set_writer
+  
   def index
     @stories = @writer.stories
   end
@@ -15,7 +14,7 @@ class StoriesController < ApplicationController
     @story.writer_id = @writer.id
     if @story.save
       flash[:success] = "Created new story"
-      redirect_to wall_path(@writer)
+      redirect_to wall_writer_path(@writer)
     else
       flash.now[:error] = "Failed to create story"
       render :new
@@ -55,10 +54,7 @@ class StoriesController < ApplicationController
   private
 
   def story_params
-    params.require(:story).permit(:title, :summary, :body)
+    params.require(:story).permit(:title, :summary, :body, :published)
   end
 
-  def set_writer
-    @writer = Writer.find(params[:writer_id])
-  end
 end
