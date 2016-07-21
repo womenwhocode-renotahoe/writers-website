@@ -1,3 +1,87 @@
 // Place all the styles related to the writers controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+/***************
+
+About Section
+
+***************/
+
+.hero {
+
+  width:100%;
+  height:350px;
+  background-color: #0c0c0c;
+  margin: auto;
+}
+
+
+.logo {
+  display: block;
+  margin: 0 auto;
+  padding-top: 70px;
+  max-width: 200px;
+
+}
+
+.nav {
+
+  background-color: #767673;
+}
+.about {
+
+  background-color: #9a9a99;
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 40px;
+  padding-bottom: 50px;
+}
+
+.location {
+  font-size:16px;
+}
+
+.social-link {
+  margin-top: 25px;
+  width:40px;
+}
+
+.bio {
+  width:45%;
+  margin: auto;
+  line-height: 17px;
+  margin-top: 20px;
+}
+
+.story h3 {
+
+  text-align: center;
+}
+
+gray,h4 {
+  color: #767673;
+}
+
+.story {
+
+  margin-top: 30px;
+  padding-bottom: 70px;
+}
+
+.color {
+
+  padding-left: 70px;
+  padding-top: 30px;
+}
+
+.pic {
+
+  max-width: 100px;
+}
+
+footer {
+  width:100%;
+  padding: 20px;
+  background-color: #000000;
+}

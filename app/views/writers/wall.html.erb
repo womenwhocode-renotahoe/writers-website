@@ -22,10 +22,10 @@
         <%= form_for [@writer, @activity], remote: true do |f| %>
           <div class="input-group">
             <span class="input-group-label">How many words did you write today?</span>
-            <%= f.hidden_field :goal_id, 
+            <%= f.hidden_field :goal_id,
                                :value => @writer.goals.where(title: 'Creative Goal').first.id %>
             <%= f.hidden_field :date, :value => DateTime.now %>
-            <%= f.number_field :count, class: "input-group-field" %>   
+            <%= f.number_field :count, class: "input-group-field" %>
             <div class="input-group-button">
               <%= f.submit 'Record Activity', class: "button" %>
             </div>
