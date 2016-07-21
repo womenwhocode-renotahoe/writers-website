@@ -27,4 +27,5 @@ module WritersHelper
 	    date.strftime("%B %-d")
 	  end
 	end
+
 end

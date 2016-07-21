@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
-  devise_for :users, path_names: {sign_in: "login", sign_out: "logout"}
-  resources :writers, only: [:index, :new, :create, :show, :edit, :update] do
+  devise_for :users, controllers: { confirmations: 'confirmations', registrations: 'registrations' },
+                     path_names: {:sign_in => 'login', :sign_out => 'logout', :sign_up => 'sign-up'}
+  resources :writers, except: [:destroy] do
     resources :stories
     resources :activities, except: [:show]
-    resources :goals, only: [:edit, :update]
+    resources :goals, only: [:index, :edit, :update]
+    get :wall, on: :member
   end
-  get '/writers/:id/wall', to: 'writers#wall', as: 'wall'
-  get '/writers/:id/goals', to: 'goals#index', as: 'goals'
+  get '/writers/:id/become', to: 'writers#become', as: 'become'
 end

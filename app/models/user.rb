@@ -1,8 +1,5 @@
 class User < ActiveRecord::Base
-  after_create do |user|
-    create_writer(user)
-  end
-
+  after_create :create_writer
   has_one :writer
 
   has_attached_file :avatar, :styles => { :medium => "300x300", :thumb => "100x100" }
@@ -19,10 +16,10 @@ class User < ActiveRecord::Base
 
   private
 
-  def create_writer(user)
-    return if user.role == 'admin' || user.role == 'visitor'
+  def create_writer
+    return if self.role == 'admin' || self.role == 'visitor'
     writer = Writer.new
-    writer.user_id = user.id
+    writer.user_id = self.id
     writer.save!
   end
 

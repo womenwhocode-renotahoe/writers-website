@@ -5,6 +5,6 @@
    	 <%= goal.count %> 
    	 <%= goal.noun.pluralize(goal.count) %>
    	 <%= goal_freq(goal) %></p>
-     <%= link_to 'Edit', edit_writer_goal_path(goal, goal.writer_id), remote: true %>
+     <%= link_to 'Edit', edit_writer_goal_path(goal.writer_id, goal), remote: true %>
 	</div>
 </div>

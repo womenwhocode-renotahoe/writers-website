@@ -1,5 +1,7 @@
-class GoalsController < ApplicationController
-  before_action :set_writer
+class GoalsController < WritersController
+  before_filter :set_writer
+  before_filter :check_current_owner_writer
+
   respond_to :html, :js
 
   def index
@@ -21,10 +23,6 @@ class GoalsController < ApplicationController
   end
 
   private
-
-  def set_writer
-    @writer = current_user.writer
-  end
 
   def goal_params
     params.require(:goal).permit(:count, :freq)
