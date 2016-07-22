@@ -9,9 +9,11 @@
       </div>
       <div class="top-bar-right nav">
         <ul class="menu linkbar nav">
-          <li class="nav"><%= link_to 'Write on Your Wall', wall_writer_path(@writer), class:"mainlinks" %></li>
-          <li class="nav"><%= link_to 'View Your Progress', writer_goals_path(@writer),class:"mainlinks" %></li>
-          <li class="nav"><%= link_to 'Logout', destroy_user_session_path, method: :delete, class:"mainlinks" %> </li>
+
+          <li class="nav"><%= link_to image_tag("pencil.png", class:"mainlinks"), wall_writer_path(@writer) %></li>
+            <li class="nav"><%= link_to image_tag("avatar.png", class:"mainlinks"), writer_goals_path(@writer) %></li>
+
+          <li class="nav"><%= link_to 'Logout', destroy_user_session_path, method: :delete, class:"mainlinks2" %> </li>
         </ul>
       </div>
     </div>

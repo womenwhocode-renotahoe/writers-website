@@ -36,7 +36,7 @@
     <div class="row">
 <% @stories.each do |story| %>
   <div class="medium-6 columns color">
-    <h4 class="gray"><%= link_to story.title, writer_story_path(@writer, story) %></h4>
+    <h4 class="gray"><%= link_to story.title, writer_story_path(@writer, story), class:"gray" %></h4>
   <p><%= story.summary %></p>
   </div>
   <% end %>
