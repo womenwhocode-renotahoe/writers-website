@@ -5,7 +5,25 @@ html.login {
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Slabo 27px', serif;
 }
+a {
+  color:#fff;
+}
+a:hover {
+  color:#ff8080;
+}
 
+.login h1 {
+  font-size:1.5em;
+  color:#fff;
+}
+
+.subheader {
+  color:#00B1A8;
+}
+
+.content-area {
+  background-color:#fff;
+}
 .panel {
   background-color:#EFEBCA;
 }
@@ -13,4 +31,28 @@ h1, h2, h3, h4, h5, h6 {
   background-color:#FF7E8A;
   background-color:#F15B5A;
   background-color: #FF8080;
+}
+.panel.layout-panel {
+  padding:3em;
+}
+
+/* Footer */
+
+footer .menu {
+  font-size:90%;
+}
+
+
+/* Global Styles */
+
+.l-padding-large-v {
+  padding-top:2em;
+  padding-bottom:2em;
+}
+
+.bg-medium {
+  background-color:#00B1A8;
+}
+.bg-med-dark {
+  background-color:#12818B;
 }
