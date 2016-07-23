@@ -1,0 +1,16 @@
+html.login {
+  background-color:#12818B;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Slabo 27px', serif;
+}
+
+.panel {
+  background-color:#EFEBCA;
+}
+.panel.highlight {
+  background-color:#FF7E8A;
+  background-color:#F15B5A;
+  background-color: #FF8080;
+}
