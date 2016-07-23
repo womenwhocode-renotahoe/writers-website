@@ -20,20 +20,40 @@ a:hover {
 .subheader {
   color:#00B1A8;
 }
+.button {
+  border:1px solid #12818B;
+  font-family:
+}
+.button:hover {
+  background-color:#12818B;
+}
+
+/* Main Content */
 
 .content-area {
   background-color:#fff;
 }
 .panel {
   background-color:#EFEBCA;
+  padding:1em;
 }
 .panel.highlight {
   background-color:#FF7E8A;
   background-color:#F15B5A;
+  background-color:#FF9E50; /*orange*/
   background-color: #FF8080;
+  color:#fff;
+  -webkit-box-shadow: inset 0px 0px 1px 1px rgb(255, 255, 255);
+  -moz-box-shadow: inset 0px 0px 1px 1px rgb(255, 255, 255);
+  box-shadow: inset 0px 0px 1px 1px rgb(255, 255, 255);
+  border: 1px solid #ff5858;
 }
 .panel.layout-panel {
   padding:3em;
+}
+
+.panel-title {
+  font-weight:700;
 }
 
 /* Footer */
