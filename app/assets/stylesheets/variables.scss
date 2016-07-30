@@ -1,0 +1,34 @@
+
+$outer-space:#333;
+$ashes: #565656;
+$silver:#bbb;
+
+
+$elm:#12818B;
+$sea-green:#00B1A8;
+$orange:#FF9E50;
+$coral:#FF8080;
+
+
+// *************************************
+// SHORTCUTS - Minor = highlight, Major = standard
+
+$body-text: $outer-space;
+$body-text-medium: darken($silver, 10%);
+$body-text-medium-light:lighten($silver, 10%);
+$body-text-medium-dark:$ashes;
+
+$highlight:$orange;
+$general-use: $elm;
+$general-use-accent: lighten($general-use,20%);
+$general-hover:saturate($general-use,45%);
+
+$bg-major: $silver;
+$bg-minor: $ashes;
+$bg-dark: darken($bg-minor,10%);
+
+$border-minor: darken($elm, 10%);
+$border-major: $silver;
+
+$font-minor: 'Slabo 27px', serif;
+$font-major: 'Droid Sans', Arial, sans-serif;

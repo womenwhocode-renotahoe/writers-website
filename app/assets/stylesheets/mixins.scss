@@ -1,0 +1,28 @@
+// Mixins only
+
+@mixin multi-rounded-corners($topLeft, $topRight, $bottomRight, $bottomLeft) {
+	-webkit-border-bottom-left-radius: $bottomLeft;
+	-webkit-border-top-left-radius: $topLeft;
+	-moz-border-radius-bottomleft: $bottomLeft;
+	-moz-border-radius-topleft: $topLeft;
+	border-bottom-left-radius: $bottomLeft;
+	border-top-left-radius: $topLeft;
+	-webkit-border-bottom-right-radius: $bottomRight;
+	-webkit-border-top-right-radius: $topRight;
+	-moz-border-radius-bottomright: $bottomRight;
+	-moz-border-radius-topright: $topRight;
+	border-bottom-right-radius: $bottomRight;
+	border-top-right-radius: $topRight;
+}
+
+@mixin box-shadow($horz, $vert, $blur, $spread, $color, $inset:""){
+	-webkit-box-shadow: $horz $vert $blur $spread $color #{$inset};
+	-moz-box-shadow:$horz $vert $blur $spread $color #{$inset};
+	-o-box-shadow:$horz $vert $blur $spread $color #{$inset};
+	box-shadow: $horz $vert $blur $spread $color #{$inset};
+}
+
+@mixin text-shadow ($horz, $vert, $spread, $color) {
+	-webkit-text-shadow: $horz $vert $spread $color;
+	text-shadow: $horz $vert $spread $color;
+}
