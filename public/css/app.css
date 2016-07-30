@@ -47,7 +47,16 @@ a:hover {
   background-color:#12818B;
 }
 
+/* Header */
 
+.m-header-row {
+  border-bottom:6px solid #fff;
+}
+
+.m-tagline {
+  padding-top:1.75em;
+  padding-bottom:1em;
+}
 
 /* Main Content */
 
@@ -80,6 +89,10 @@ a:hover {
 }
 
 /* Footer */
+
+.m-footer-row {
+  border-top: 6px solid #fff;
+}
 
 footer .menu {
   font-size:90%;
