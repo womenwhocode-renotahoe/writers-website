@@ -91,16 +91,17 @@ footer .menu {
 .bg-writing {
   position:absolute;
   z-index:0;
+  width:100%;
 }
 
 .l-writing-line p {
   color: rgba(2555,255,255,0.3);
   font-family: 'Courier', serif;
-  font-size: 60px;
+  font-size: 3.750em;
   margin: 10px 0 0 10px;
   white-space: nowrap;
-
-  width: 10em;
+  width: 100%;
+  overflow:hidden;
   animation: type 4s steps(60, end);
 }
 
@@ -132,4 +133,20 @@ p.f-pacifico {
 
 p.f-shadows {
   font-family: 'Shadows Into Light', sans-serif;
+}
+
+.l-height-c {
+  height:200px;
+}
+
+.l-height-c p {
+  font-size: 4.57em;
+
+}
+p.l-shift-up {
+  margin-top:-.5em;
+}
+
+.f-below-baseline {
+  line-height:1.875em;
 }
