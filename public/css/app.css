@@ -2,6 +2,10 @@ html.login {
   background-color:#12818B;
 }
 
+body {
+  position:relative;
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Slabo 27px', serif;
 }
@@ -28,10 +32,29 @@ a:hover {
   background-color:#12818B;
 }
 
+
+/* Global Styles */
+
+.l-padding-large-v {
+  padding-top:2em;
+  padding-bottom:2em;
+}
+
+.bg-medium {
+  background-color:#00B1A8;
+}
+.bg-med-dark {
+  background-color:#12818B;
+}
+
+
+
 /* Main Content */
 
 .content-area {
-  background-color:#fff;
+  background-color:rgba(255,255,255,0.8);
+  position: relative;
+  z-index: 1;
 }
 .panel {
   background-color:#EFEBCA;
@@ -63,16 +86,50 @@ footer .menu {
 }
 
 
-/* Global Styles */
+/* Written Background */
 
-.l-padding-large-v {
-  padding-top:2em;
-  padding-bottom:2em;
+.bg-writing {
+  position:absolute;
+  z-index:0;
 }
 
-.bg-medium {
-  background-color:#00B1A8;
+.l-writing-line p {
+  color: rgba(2555,255,255,0.3);
+  font-family: 'Courier', serif;
+  font-size: 60px;
+  margin: 10px 0 0 10px;
+  white-space: nowrap;
+
+  width: 10em;
+  animation: type 4s steps(60, end);
 }
-.bg-med-dark {
-  background-color:#12818B;
+
+.l-writing-line p:nth-child(2){
+  animation: type2 8s steps(60, end);
+}
+
+.l-writing-line span{
+  animation: blink 1s infinite;
+}
+
+@keyframes type{
+  from { width: 0; }
+}
+
+@keyframes type2{
+  0%{width: 0;}
+  50%{width: 0;}
+  100%{ width: 100; }
+}
+
+@keyframes blink{
+  to{opacity: .0;}
+}
+
+p.f-pacifico {
+  font-family: 'Pacifico', cursive;
+}
+
+p.f-shadows {
+  font-family: 'Shadows Into Light', sans-serif;
 }
